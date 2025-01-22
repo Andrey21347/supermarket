@@ -1,9 +1,10 @@
-let products = [
+let products2 = [
     {
-        "title": "батон",
+        "title": "hygh",
         "price": 200,
         "image":"https://lh5.googleusercontent.com/proxy/8XulTcXi66z_k_TuFRh9qszlOTzWH3Q2eF5-Ql1VC4WL5VQlti7Z6gf9cs68D2GGPtCaiXEaijXX3A",
         "description":"самый известный в наших краях вид хлеба, который пекут из пшеничной муки высшего сорта в продолговатой округлой форме",
+
 
     },
     {
@@ -13,10 +14,10 @@ let products = [
         "description":"отличный источник калия и витаминов С, К и А. Кроме того, помидоры особенно богаты ликопином, важным фитонутриентом с антиоксидантными свойствами"
     }
 
+
 ]
 
 
-// Функція для отримання значення кукі за ім'ям
 function getCookieValue(cookieName) {
     // Розділяємо всі куки на окремі частини
     const cookies = document.cookie.split(';');
@@ -119,7 +120,7 @@ function getCookieValue(cookieName) {
  }
  //виведення на екран всіх товарів
  function printProducts(_products) {
-    let localProducts = _products || products;
+    let localProducts = _products || products
     //контейнер в якому знаходяться всі товари
     let itemsContainer = document.querySelector(".items");
     itemsContainer.innerHTML = "";
@@ -140,11 +141,23 @@ function getCookieValue(cookieName) {
  
  
  printProducts();
+ 
+ 
  let search = document.querySelector(".search");
+ 
+ 
  function onSearch(event){
-    let localProducts = products.filter(product =>
-        product.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()));
+    let localProducts = products.filter(product => product.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()));
     console.log(localProducts,event.target.value)
+ 
+ 
     printProducts(localProducts);
  }
  search.addEventListener("change",onSearch)
+ 
+ 
+ 
+ 
+ 
+
+
