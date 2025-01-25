@@ -49,3 +49,4 @@ cart_items_element.addEventListener('change', (event) => {
        showCartList() // Оновити список товарів у кошику
    }
 });
+
