@@ -1,4 +1,3 @@
-
 body{
     padding-top: 130px;
     margin: 0;
@@ -9,6 +8,24 @@ a{
     text-decoration: none;
     color: white;
 }
+main{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+.search{
+    font-size: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    color: #dee2e6;
+    background-color: #212529;
+   
+ }
+ 
 header{
     height: 80px;
     display: flex;
@@ -23,15 +40,17 @@ header{
 }
 .cart-container{
     display: flex;
+    align-items: center;
     background-color:rgb(57, 39, 137) ;
     border-radius: 8px;
-
-
+padding: 5px;
+gap: 20px;
 }
 .logo{
     background-color:rgb(57, 39, 137)  ;
-
-
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
 }
 
 
@@ -174,5 +193,3 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     font-size: 25px;
  }
  
-
-
