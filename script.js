@@ -1,23 +1,48 @@
-let products2 = [
+let products = [
     {
-        "title": "hygh",
+        "title": "Батон",
         "price": 200,
         "image":"https://lh5.googleusercontent.com/proxy/8XulTcXi66z_k_TuFRh9qszlOTzWH3Q2eF5-Ql1VC4WL5VQlti7Z6gf9cs68D2GGPtCaiXEaijXX3A",
         "description":"самый известный в наших краях вид хлеба, который пекут из пшеничной муки высшего сорта в продолговатой округлой форме",
 
-
     },
     {
-        "title": "памидор",
+        "title": "Памидор",
         "price": 250,
         "image":"https://calorizator.ru/sites/default/files/imagecache/product_512/product/tomato.jpg",
         "description":"отличный источник калия и витаминов С, К и А. Кроме того, помидоры особенно богаты ликопином, важным фитонутриентом с антиоксидантными свойствами"
-    }
+    },
+    {
+        "title": "Огурец",
+        "price": 185,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh1t5-4iGrZgnKEqnoAO0KsvNQjfFFzsVDvoATpVWMXsus49vniv6nrROtPY5ny1fd33Q&usqp=CAU",
+        "description":"В огурцах высокое содержание витамина K, который отвечает за свертываемость крови, витамина C, способствующего общему укреплению организма, а также витамина E и некоторых витаминов группы B (В2, В3 и В4). В свежих огурцах содержится большое количество калия.",
 
+    },
+    {
+        "title": "Морковка",
+        "price": 199,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoHacEQUzNVeRmDuAyVjuJUm2H3wEhJ0DQy7RFA2JD26T-C5H7BEnQj3Ss7f414U8jbk&usqp=CAU",
+        "description":"Она имеет пурпурную кожицу и блестящую желто-оранжевую сердцевину. Хотя слегка острый, ореховый вкус и сочно-хрустящая текстура моркови делают ее пригодной для употребления в пищу в сыром или приготовленном виде, некоторые дегустаторы считают ее «заметно более горькой» в приготовленном виде."
+    },
+    {
+        "title": "Картошка",
+        "price": 245,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKW2vWcBCeASYj7XkMxgf0eITQpYcLhShqweQUa0yN84Si7Lvy8mvjGVRlxbnJWMuucpU&usqp=CAU",
+        "description":"крахмалистый клубневый овощ, произрастающий в Америке, который употребляется в пищу в качестве основного продукта питания во многих частях мира",
+
+    },
+    {
+        "title": "Тыква",
+        "price": 399,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw3_IlI8mzkVFEch9rZqcXgQdPQacgY2tMgUXyBLE58xXMSfy_jJyBkONBV3UcPrA6UQA&usqp=CAU",
+        "description":"живописный оранжевый плод травянистого растения семейства Тыквенные, родственник кабачка и дыни"
+    },
 
 ]
 
 
+// Функція для отримання значення кукі за ім'ям
 function getCookieValue(cookieName) {
     // Розділяємо всі куки на окремі частини
     const cookies = document.cookie.split(';');
@@ -120,7 +145,7 @@ function getCookieValue(cookieName) {
  }
  //виведення на екран всіх товарів
  function printProducts(_products) {
-    let localProducts = _products || products
+    let localProducts = _products || products;
     //контейнер в якому знаходяться всі товари
     let itemsContainer = document.querySelector(".items");
     itemsContainer.innerHTML = "";
@@ -141,23 +166,11 @@ function getCookieValue(cookieName) {
  
  
  printProducts();
- 
- 
  let search = document.querySelector(".search");
- 
- 
  function onSearch(event){
-    let localProducts = products.filter(product => product.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()));
+    let localProducts = products.filter(product =>
+        product.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()));
     console.log(localProducts,event.target.value)
- 
- 
     printProducts(localProducts);
  }
- search.addEventListener("change",onSearch)
- 
- 
- 
- 
- 
-
-
+ search.addEventListener("input",onSearch)
